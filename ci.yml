@@ -27,6 +27,11 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
+
+          - name lint with flake8
+          run:
+          flake8 . --max-line-length=100
+
       - name: Run unit tests
         run: |
           pytest -q
